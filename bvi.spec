@@ -30,14 +30,12 @@ install -d $RPM_BUILD_ROOT
 
 %{__make} install DESTDIR=$RPM_BUILD_ROOT
 
-gzip -9nf README CHANGES CREDITS
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz html/*
+%doc README CHANGES CREDITS html/*
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/bmore.help
 %doc %{_mandir}/man1/*
