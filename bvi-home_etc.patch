@@ -1,0 +1,32 @@
+diff -Nru bvi-1.3.1/io.c bvi-1.3.1.new/io.c
+--- bvi-1.3.1/io.c	Tue Dec 25 13:37:38 2001
++++ bvi-1.3.1.new/io.c	Sun Mar 23 19:07:37 2003
+@@ -264,7 +264,8 @@
+ {
+ 	char    *initstr;
+ 	char    rcpath[MAXCMD];
+-
++	char	*config_dir = getenv("CONFIG_DIR");
++	
+ 	terminal = getenv("TERM");
+ 	shell = getenv("SHELL");
+ 	if (shell == NULL || *shell == '\0')
+@@ -275,9 +276,15 @@
+ 		return;
+ 	}
+ 	
+-	strncpy(rcpath, getenv("HOME"), MAXCMD - 8);
+-	rcpath[MAXCMD - 8] = '\0';
+-	strcat(rcpath, "/.bvirc");
++	if (config_dir) {
++		strncpy(rcpath, config_dir, MAXCMD - 7);
++		rcpath[MAXCMD - 7] = '\0';
++		strcat(rcpath, "/bvirc");
++	} else {
++		strncpy(rcpath, getenv("HOME"), MAXCMD - 8);
++		rcpath[MAXCMD - 8] = '\0';
++		strcat(rcpath, "/.bvirc");
++	}
+ 	if (stat(rcpath, &buf) == 0) {
+ 		if (buf.st_uid == getuid()) read_rc(rcpath);
+ 	}
