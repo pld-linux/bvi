@@ -6,7 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Editors
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.src.tar.gz
-Patch0:		%{name}-home_etc.patch
+Patch0:		%{name}-etc_dir.patch
 URL:		http://bvi.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
