@@ -26,6 +26,7 @@ edytorze vi.
 %patch1 -p1
 
 %build
+cp /usr/share/automake/config.sub .
 %configure \
 	--with-ncurses=/usr
 %{__make}
