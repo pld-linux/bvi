@@ -5,7 +5,7 @@ Version:	1.3.1
 Release:	1
 License:	GPL
 Group:		Applications/Editors
-Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.src.tar.gz
+Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.src.tar.gz
 URL:		http://bvi.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
