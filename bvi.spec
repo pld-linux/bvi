@@ -1,5 +1,5 @@
-Summary:	binary vi
-Summary(pl):	binarny vi
+Summary:	Binary vi
+Summary(pl):	Binarny vi
 Name:		bvi
 Version:	1.3.1
 Release:	1
@@ -7,16 +7,15 @@ License:	GPL
 Group:		Applications/Editors
 Source0:	http://prdownloads.sourceforge.net/%{name}/%{name}-%{version}.src.tar.gz
 URL:		http://bvi.sf.net/
-#BuildRequires:
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-
-bvi is a simple binary file editor which user interface is based on vi editor.
+bvi is a simple binary file editor which user interface is based on vi
+editor.
 
 %description -l pl
-
-bvi to prosty edytor plików binarnych z interfejsem wzorowanym na edytorze vi.
+bvi to prosty edytor plików binarnych z interfejsem wzorowanym na
+edytorze vi.
 
 %prep
 %setup -q -n %{name}-%{version}
