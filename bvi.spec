@@ -1,13 +1,14 @@
 Summary:	Binary vi
 Summary(pl):	Binarny vi
 Name:		bvi
-Version:	1.3.1
-Release:	2
+Version:	1.3.2
+Release:	1
 License:	GPL
 Group:		Applications/Editors
 Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.src.tar.gz
-# Source0-md5:	b9d77c57bda2e019207a1874d9bb4dea
-Patch0:		%{name}-etc_dir.patch
+# Source0-md5:	4257305ffb27177a6d5208b2df4ca92d
+Patch0:		%{name}-home_etc.patch
+Patch1:		%{name}-paths.patch
 URL:		http://bvi.sf.net/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -22,6 +23,7 @@ edytorze vi.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 %configure \
@@ -42,5 +44,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README CHANGES CREDITS html/*
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/bmore.help
+%{_datadir}/%{name}/bmore.help
 %doc %{_mandir}/man1/*
