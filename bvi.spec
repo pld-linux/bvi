@@ -5,11 +5,12 @@ Version:	1.3.2
 Release:	1
 License:	GPL
 Group:		Applications/Editors
-Source0:	http://dl.sourceforge.net/%{name}/%{name}-%{version}.src.tar.gz
+Source0:	http://dl.sourceforge.net/bvi/%{name}-%{version}.src.tar.gz
 # Source0-md5:	4257305ffb27177a6d5208b2df4ca92d
 Patch0:		%{name}-home_etc.patch
 Patch1:		%{name}-paths.patch
 URL:		http://bvi.sf.net/
+BuildRequires:	automake
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,7 +27,7 @@ edytorze vi.
 %patch1 -p1
 
 %build
-cp /usr/share/automake/config.sub .
+cp -f /usr/share/automake/config.sub .
 %configure \
 	--with-ncurses=/usr
 %{__make}
