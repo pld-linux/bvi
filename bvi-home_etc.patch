@@ -1,32 +1,25 @@
-diff -Nru bvi-1.3.1/io.c bvi-1.3.1.new/io.c
---- bvi-1.3.1/io.c	Tue Dec 25 13:37:38 2001
-+++ bvi-1.3.1.new/io.c	Sun Mar 23 19:07:37 2003
-@@ -264,7 +264,8 @@
+diff -burN bvi-1.3.2.orig/io.c bvi-1.3.2/io.c
+--- bvi-1.3.2.orig/io.c	2004-02-15 00:17:56.704261504 +0100
++++ bvi-1.3.2/io.c	2004-02-15 00:21:35.243038560 +0100
+@@ -265,6 +265,7 @@
  {
  	char    *initstr;
  	char    rcpath[MAXCMD];
--
-+	char	*config_dir = getenv("CONFIG_DIR");
-+	
++	char	*home_etc = getenv("HOME_ETC");
+ 
  	terminal = getenv("TERM");
  	shell = getenv("SHELL");
- 	if (shell == NULL || *shell == '\0')
-@@ -275,9 +276,15 @@
- 		return;
- 	}
- 	
--	strncpy(rcpath, getenv("HOME"), MAXCMD - 8);
--	rcpath[MAXCMD - 8] = '\0';
--	strcat(rcpath, "/.bvirc");
-+	if (config_dir) {
-+		strncpy(rcpath, config_dir, MAXCMD - 7);
+@@ -285,8 +286,13 @@
+ 	read_rc(rcpath);
+ 	read_rc("BVI.RC");
+ #else
++	if (home_etc) {
++		strncpy(rcpath, home_etc, MAXCMD - 7);
 +		rcpath[MAXCMD - 7] = '\0';
-+		strcat(rcpath, "/bvirc");
 +	} else {
-+		strncpy(rcpath, getenv("HOME"), MAXCMD - 8);
-+		rcpath[MAXCMD - 8] = '\0';
-+		strcat(rcpath, "/.bvirc");
-+	}
+ 	strncpy(rcpath, getenv("HOME"), MAXCMD - 8);
+ 	rcpath[MAXCMD - 8] = '\0';
++	};
+ 	strcat(rcpath, "/.bvirc");
  	if (stat(rcpath, &buf) == 0) {
  		if (buf.st_uid == getuid()) read_rc(rcpath);
- 	}
