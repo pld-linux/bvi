@@ -44,5 +44,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README CHANGES CREDITS html/*
 %attr(755,root,root) %{_bindir}/*
-%{_datadir}/%{name}/bmore.help
-%doc %{_mandir}/man1/*
+%{_datadir}/%{name}
+%{_mandir}/man1/*
