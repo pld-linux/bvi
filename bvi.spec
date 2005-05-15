@@ -9,8 +9,9 @@ Source0:	http://dl.sourceforge.net/bvi/%{name}-%{version}.src.tar.gz
 # Source0-md5:	4257305ffb27177a6d5208b2df4ca92d
 Patch0:		%{name}-home_etc.patch
 Patch1:		%{name}-paths.patch
-URL:		http://bvi.sf.net/
+URL:		http://bvi.sourceforge.net/
 BuildRequires:	automake
+BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
