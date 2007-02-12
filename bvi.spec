@@ -1,5 +1,5 @@
 Summary:	Binary vi
-Summary(pl.UTF-8):   Binarny vi
+Summary(pl.UTF-8):	Binarny vi
 Name:		bvi
 Version:	1.3.2
 Release:	1
