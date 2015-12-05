@@ -2,7 +2,7 @@ Summary:	Binary vi
 Summary(pl.UTF-8):	Binarny vi
 Name:		bvi
 Version:	1.3.2
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Editors
 Source0:	http://dl.sourceforge.net/bvi/%{name}-%{version}.src.tar.gz
