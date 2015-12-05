@@ -1,14 +1,13 @@
 Summary:	Binary vi
 Summary(pl.UTF-8):	Binarny vi
 Name:		bvi
-Version:	1.3.2
-Release:	2
+Version:	1.4.0
+Release:	1
 License:	GPL
 Group:		Applications/Editors
 Source0:	http://dl.sourceforge.net/bvi/%{name}-%{version}.src.tar.gz
-# Source0-md5:	4257305ffb27177a6d5208b2df4ca92d
+# Source0-md5:	aa83eb8b2b6b0bb6cdd8e6beef12b775
 Patch0:		%{name}-home_etc.patch
-Patch1:		%{name}-paths.patch
 URL:		http://bvi.sourceforge.net/
 BuildRequires:	automake
 BuildRequires:	ncurses-devel
@@ -25,7 +24,6 @@ edytorze vi.
 %prep
 %setup -q
 %patch0 -p1
-%patch1 -p1
 
 %build
 cp -f /usr/share/automake/config.sub .
@@ -45,7 +43,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README CHANGES CREDITS html/*
+%doc README CHANGES CREDITS
 %attr(755,root,root) %{_bindir}/*
 %{_datadir}/%{name}
 %{_mandir}/man1/*
