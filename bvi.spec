@@ -5,7 +5,7 @@ Version:	1.4.0
 Release:	1
 License:	GPL
 Group:		Applications/Editors
-Source0:	http://dl.sourceforge.net/bvi/%{name}-%{version}.src.tar.gz
+Source0:	http://downloads.sourceforge.net/bvi/%{name}-%{version}.src.tar.gz
 # Source0-md5:	aa83eb8b2b6b0bb6cdd8e6beef12b775
 Patch0:		%{name}-home_etc.patch
 URL:		http://bvi.sourceforge.net/
