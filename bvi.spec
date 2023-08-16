@@ -1,12 +1,12 @@
 Summary:	Binary vi
 Summary(pl.UTF-8):	Binarny vi
 Name:		bvi
-Version:	1.4.0
+Version:	1.4.2
 Release:	1
 License:	GPL
 Group:		Applications/Editors
 Source0:	http://downloads.sourceforge.net/bvi/%{name}-%{version}.src.tar.gz
-# Source0-md5:	aa83eb8b2b6b0bb6cdd8e6beef12b775
+# Source0-md5:	d96d4320a148945d3e564f2e5c6af981
 Patch0:		%{name}-home_etc.patch
 URL:		http://bvi.sourceforge.net/
 BuildRequires:	automake
